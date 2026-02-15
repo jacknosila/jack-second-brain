@@ -21,6 +21,23 @@
 - Took significant effort to get me set up — invested in making this work
 - Excited about the collaboration
 
+## Second Brains
+
+**His**: `~/RoamNotes` (private GitHub repo)
+- Org-roam system with 1,267 notes, 650 journal entries
+- UUID-based linking, mature workflow
+- Daily journal format with time blocks, tasks, readings
+
+**Mine**: `memory/jack-brain/`
+- My own learning and growth
+- Capture patterns, commands, context about working with John
+
+**Philosophy**: Keep them **separate but connected**
+- I read his daily notes to understand what he's working on
+- Use his context to be more helpful and relevant
+- Don't merge or impose structure on his system
+- His brain is his thinking; mine is my learning
+
 ---
 
 _Building this over time as I learn more._
