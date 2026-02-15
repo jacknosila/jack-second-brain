@@ -1,0 +1,16 @@
+# Secrets and sensitive data
+secrets/
+*.key
+*.pem
+.env
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+
+# Local config that shouldn't be shared
+.openclaw/local/
+
+# Heartbeat state (high churn, low value)
+memory/heartbeat-state.json
