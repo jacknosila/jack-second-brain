@@ -15,7 +15,8 @@
 - [x] Auto-hide Dock
 - [x] Keep Mac awake with caffeinate
 - [x] Set up daily summary (7:30 AM) with weather + Aave health factor
+- [x] Configure Brave Search API (working after tier upgrade)
 
 ---
 
-_Updated: 2026-02-15_
+_Updated: 2026-02-15 15:21_
