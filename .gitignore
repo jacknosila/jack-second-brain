@@ -14,3 +14,7 @@ secrets/
 
 # Heartbeat state (high churn, low value)
 memory/heartbeat-state.json
+
+# Node modules
+node_modules/
+scripts/node_modules/
