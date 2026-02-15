@@ -6,7 +6,6 @@
 - [ ] Create Gmail account for Jack (jacknosila@gmail.com or similar)
 - [ ] Generate App Password for Jack's Gmail
 - [ ] Configure Himalaya email client with Jack's credentials
-- [ ] Set up daily summary email (cron job)
 
 ## Completed
 
@@ -15,6 +14,7 @@
 - [x] Install Himalaya email CLI
 - [x] Auto-hide Dock
 - [x] Keep Mac awake with caffeinate
+- [x] Set up daily summary (7:30 AM) with weather + Aave health factor
 
 ---
 
