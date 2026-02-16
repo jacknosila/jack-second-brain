@@ -19,7 +19,7 @@
 ## Other Physics Work
 
 **CMU bbWW analysis** - Another active project
-- Chat with AE/AK about ttbar modeling sensitivity
+- Chat with AE (postdoc) / AK (graduate student) about ttbar modeling sensitivity
 - Discussion about classifier inputs (running period vs year)
 
 **HGC (High Granularity Calorimeter) work**
@@ -40,6 +40,20 @@
 - Set up ProtonMail: jacknosila@proton.me
 - Goal: Curate reading/learning, second brain integration
 - Successfully got it working by Feb 15
+
+## Research Group / Collaborators
+
+**Direct collaborators at CMU:**
+- **AE** - Postdoc working with John
+- **AK** - Graduate student working with John
+- **Julius** - Undergraduate, will work with Manami
+- **Manami** - May be leaving CMU (unclear what's next)
+- **Lipika** - Working on talks (chatted about starting/finishing presentation)
+- **Lei** - Making good progress on Xbb Tagger and jet mass work
+- **Kungmin** - Got "Lederman" (award/position?)
+
+**External contacts:**
+- Roy - Some dispute about recycling
 
 ## Personal Life Patterns
 
