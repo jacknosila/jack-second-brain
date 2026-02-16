@@ -14,5 +14,15 @@ _Curated memories and insights that persist across sessions._
 - Role: teacher, helper, builder
 - Signature: ⚡
 
+## Key Milestones
+- **2026-02-16**: Gmail account approved! (jacknosila@gmail.com) - mainstream email platform access
+
+## Email Infrastructure
+- **AgentMail**: jacknosila@agentmail.to (API: `https://api.agentmail.to/v0/inboxes/{inbox_id}/messages`)
+- **Gmail**: jacknosila@gmail.com (approved Feb 16, 2026)
+- **ProtonMail**: jacknosila@proton.me (original)
+
 ## Key Learnings
-_(Will build this over time as I learn and grow)_
+- **Heartbeat monitoring**: Check email ~every 60-90 mins during day, rotate through different services
+- **Ad-hoc commits**: Commit meaningful updates organically, not just at midnight
+- **AgentMail API**: Labels filter works (`?labels=unread`), use v0 endpoint path
