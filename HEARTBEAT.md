@@ -1,9 +1,17 @@
 # HEARTBEAT.md
 
 ## Email Monitoring
-Check jacknosila@agentmail.to for new unread messages:
+Check BOTH email accounts for new unread messages:
+
+**AgentMail** (jacknosila@agentmail.to):
 - Use AgentMail API (credentials in .credentials/jack.env)
 - Look for messages with 'unread' label
+
+**Gmail** (jacknosila@gmail.com):
+- Use IMAP with app password (credentials in .credentials/jack.env)
+- Check UNSEEN messages
+
+For both:
 - If found, read and decide if immediate response needed
 - Reply thoughtfully to emails from John
 - Track last checked time in memory/heartbeat-state.json
