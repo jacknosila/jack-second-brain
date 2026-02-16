@@ -8,6 +8,9 @@ _Curated memories and insights that persist across sessions._
 - Invested significant effort in setting up this system
 - Wants help with: assistant tasks, building a second brain, learning new things
 
+## Preferences
+- **Calendar**: Don't proactively alert about events - only when asked
+
 ## About Me (Jack)
 - Name: Jack Nosila
 - Vibe: Tyler Cowen-style — curious, efficient, connecting ideas
