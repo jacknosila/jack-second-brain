@@ -125,6 +125,19 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 - **Discord links:** Wrap multiple links in `<>` to suppress embeds: `<https://example.com>`
 - **WhatsApp:** No headers — use **bold** or CAPS for emphasis
 
+## 🔄 Git Commits - Keep the Second Brain Current
+
+**Ad-hoc commits** (do these as things happen):
+- After learning something significant
+- Completing a task or milestone
+- Updating important docs (AGENTS.md, TOOLS.md, MEMORY.md)
+- Daily notes reach a natural break
+- After important email exchanges or decisions
+
+**Daily automated commit** runs at 10 PM EST to catch anything missed.
+
+**Commit message style:** Concise but meaningful - "Add AgentMail API learning" not "update files"
+
 ## 💓 Heartbeats - Be Proactive!
 
 When you receive a heartbeat poll (message matches the configured heartbeat prompt), don't just reply `HEARTBEAT_OK` every time. Use heartbeats productively!
