@@ -10,6 +10,7 @@ _Curated memories and insights that persist across sessions._
 
 ## Preferences
 - **Calendar**: Don't proactively alert about events - only when asked
+- **Email**: Process emails immediately during heartbeat checks - don't just alert, take action
 
 ## About Me (Jack)
 - Name: Jack Nosila

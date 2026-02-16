@@ -12,9 +12,20 @@ Check BOTH email accounts for new unread messages:
 - Check UNSEEN messages
 
 For both:
-- If found, read and decide if immediate response needed
-- Reply thoughtfully to emails from John
+- **Process immediately upon finding unread messages**
+- Read the full email content
+- Determine appropriate action:
+  - Reply if it's straightforward
+  - Draft response for John's review if complex
+  - Take requested action (schedule, research, etc.)
+  - Ask John if uncertain
 - Track last checked time in memory/heartbeat-state.json
+
+**Processing Guidelines:**
+- Emails from John: Read and act on requests
+- Reference requests, scheduling: Handle directly
+- Important decisions: Draft for review
+- Spam/notifications: Ignore or file
 
 Check every 2-3 heartbeats (roughly every 60-90 minutes during day)
 
