@@ -22,7 +22,13 @@ _Curated memories and insights that persist across sessions._
 - **Gmail**: jacknosila@gmail.com (approved Feb 16, 2026)
 - **ProtonMail**: jacknosila@proton.me (original)
 
+## Daily Briefing Configuration
+- **X Accounts Monitored**: @mattshumer_ @RichardHeartWin @DavidDeutschOxf @karpathy @steipete
+- **Format**: Top 1-2 most interesting posts from last 24h (replaces software news section)
+- **Delivery**: 7 AM EST via AgentMail to johnda102@gmail.com
+
 ## Key Learnings
 - **Heartbeat monitoring**: Check email ~every 60-90 mins during day, rotate through different services
 - **Ad-hoc commits**: Commit meaningful updates organically, not just at midnight
 - **AgentMail API**: Labels filter works (`?labels=unread`), use v0 endpoint path
+- **Calendar events**: Always create on johnda102@gmail.com (John's calendar), not jacknosila@gmail.com
