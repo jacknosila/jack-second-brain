@@ -1,5 +1,11 @@
 # HEARTBEAT.md
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+## Email Monitoring
+Check jacknosila@agentmail.to for new unread messages:
+- Use AgentMail API (credentials in .credentials/jack.env)
+- Look for messages with 'unread' label
+- If found, read and decide if immediate response needed
+- Reply thoughtfully to emails from John
+- Track last checked time in memory/heartbeat-state.json
 
-# Add tasks below when you want the agent to check something periodically.
+Check every 2-3 heartbeats (roughly every 60-90 minutes during day)
