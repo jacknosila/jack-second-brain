@@ -34,7 +34,7 @@
 - Scopes needed:
   - `https://www.googleapis.com/auth/gmail.readonly`
   - `https://www.googleapis.com/auth/gmail.send`
-  - `https://www.googleapis.com/auth/calendar.readonly`
+  - `https://www.googleapis.com/auth/calendar.events` (read + write - John granted edit access)
 
 ### 4. Create OAuth Client ID
 - Application type: Desktop app
@@ -54,8 +54,10 @@ Saves refresh token for future automated access
 - ✅ Read Gmail inbox
 - ✅ Send emails from jacknosila@gmail.com
 - ✅ Read John's shared calendar
+- ✅ Create/modify calendar events when requested
 - ✅ Check upcoming events during heartbeats
 - ✅ Alert to important meetings
+- ✅ Add appointments, block time, schedule tasks
 
 ## Next Steps
 1. John shares calendar with jacknosila@gmail.com ✅
