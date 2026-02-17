@@ -63,31 +63,74 @@ High: {high_c}°C ({high_f}°F) | Low: {low_c}°C ({low_f}°F)
         return f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🌤️  WEATHER\n\n[Error fetching weather: {e}]\n"
 
 def get_aave_status():
-    """Check Aave v3 position health (placeholder)"""
-    # This would query Aave API or on-chain data
-    # For now, return placeholder
-    return """━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    """Check Aave v3 position health"""
+    # Check if we have RPC access configured
+    try:
+        creds = load_credentials()
+        rpc_url = creds.get('WEB3_RPC_URL')
+        
+        if not rpc_url:
+            return """━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💎 AAVE V3 STATUS
 
-Health Factor: [To be implemented]
-Total Collateral: [Query on-chain]
-Total Debt: [Query on-chain]
+⚠️  Monitoring not configured
+→ See SETUP-DATA-SOURCES.md for 5-min setup (free Infura/Alchemy)
 
-*Note: Add Aave position monitoring script*
+Address: 0xA7c87f5FF7367f0b30D376A4aCc2a2eD93624f5b
+"""
+        
+        # TODO: When RPC is configured, implement actual monitoring
+        # For now, show that setup is needed
+        return """━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💎 AAVE V3 STATUS
+
+🔧 RPC configured but monitoring code needs implementation
+→ Run: python3 scripts/aave-monitor.py
+
+Address: 0xA7c87f5FF7367f0b30D376A4aCc2a2eD93624f5b
+"""
+    except Exception as e:
+        return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💎 AAVE V3 STATUS
+
+❌ Error: {e}
 """
 
 def get_x_highlights():
     """Get interesting X posts from monitored accounts"""
     accounts = ["@mattshumer_", "@RichardHeartWin", "@DavidDeutschOxf", "@karpathy", "@steipete"]
     
-    return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    try:
+        creds = load_credentials()
+        x_token = creds.get('X_API_BEARER_TOKEN')
+        
+        if not x_token:
+            return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🐦 INTERESTING FROM X (Last 24h)
 
+⚠️  X API not configured
+→ See SETUP-DATA-SOURCES.md for X Developer setup
+
 *Monitoring: {', '.join(accounts)}*
+"""
+        
+        # TODO: When X API is configured, implement actual fetching
+        return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🐦 INTERESTING FROM X (Last 24h)
 
-[Top 1-2 posts will appear here once X scraping is implemented]
+🔧 API configured but fetching code needs implementation
+→ Run: python3 scripts/x-top-posts.py
 
-*Note: Requires web scraping or X API access*
+*Monitoring: {', '.join(accounts)}*
+"""
+    except Exception as e:
+        accounts = ["@mattshumer_", "@RichardHeartWin", "@DavidDeutschOxf", "@karpathy", "@steipete"]
+        return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🐦 INTERESTING FROM X (Last 24h)
+
+❌ Error: {e}
+
+*Monitoring: {', '.join(accounts)}*
 """
 
 def check_emails():
