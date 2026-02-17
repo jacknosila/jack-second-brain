@@ -18,3 +18,5 @@ memory/heartbeat-state.json
 # Node modules
 node_modules/
 scripts/node_modules/
+.credentials/
+.env

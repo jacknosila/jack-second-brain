@@ -27,7 +27,7 @@ For both:
 - Important decisions: Draft for review
 - Spam/notifications: Ignore or file
 
-Check every 2-3 heartbeats (roughly every 60-90 minutes during day)
+Check every 3-4 heartbeats (roughly every 90-120 minutes during day)
 
 ## Calendar Monitoring (when OAuth2 set up)
 - **Do NOT proactively alert about calendar events**

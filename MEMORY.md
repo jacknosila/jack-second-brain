@@ -22,17 +22,26 @@ _Curated memories and insights that persist across sessions._
 - **2026-02-16**: Gmail account approved! (jacknosila@gmail.com) - mainstream email platform access
 
 ## Email Infrastructure
-- **AgentMail**: jacknosila@agentmail.to (API: `https://api.agentmail.to/v0/inboxes/{inbox_id}/messages`)
-- **Gmail**: jacknosila@gmail.com (approved Feb 16, 2026)
-- **ProtonMail**: jacknosila@proton.me (original)
+- **Primary (sending)**: jacknosila@gmail.com (SMTP, approved Feb 16, 2026)
+- **Fallback (sending)**: jacknosila@agentmail.to (API)
+- **Monitoring (receiving)**: jacknosila@agentmail.to (checked every 60-90 min)
+- **Legacy**: jacknosila@proton.me (original, unused)
 
 ## Daily Briefing Configuration
 - **X Accounts Monitored**: @mattshumer_ @RichardHeartWin @DavidDeutschOxf @karpathy @steipete
 - **Format**: Top 1-2 most interesting posts from last 24h (replaces software news section)
 - **Delivery**: 7 AM EST via AgentMail to johnda102@gmail.com
 
+## API Cost Optimization (2026-02-16)
+- **Main session:** Claude Sonnet 4.5 (high quality for conversations)
+- **Automated tasks:** Claude Haiku 4 (12x cheaper for cron jobs, heartbeats)
+- **Heartbeat frequency:** Reduced from every 30 min to every 90-120 min
+- **Expected savings:** 60-80% reduction in API costs
+- **Documentation:** docs/cost-optimization.md
+
 ## Key Learnings
-- **Heartbeat monitoring**: Check email ~every 60-90 mins during day, rotate through different services
+- **Heartbeat monitoring**: Check email ~every 90-120 mins during day (cost-optimized from 60-90), rotate through different services
 - **Ad-hoc commits**: Commit meaningful updates organically, not just at midnight
 - **AgentMail API**: Labels filter works (`?labels=unread`), use v0 endpoint path
 - **Calendar events**: Always create on johnda102@gmail.com (John's calendar), not jacknosila@gmail.com
+- **OpenAI acquisition**: Peter Steinberger (OpenClaw creator) joined OpenAI Feb 15, 2026 - project stays open source (foundation model)
