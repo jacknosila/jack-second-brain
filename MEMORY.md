@@ -51,3 +51,4 @@ _Curated memories and insights that persist across sessions._
 - **Calendar events**: Always create on johnda102@gmail.com (John's calendar), not jacknosila@gmail.com
 - **OpenAI acquisition**: Peter Steinberger (OpenClaw creator) joined OpenAI Feb 15, 2026 - project stays open source (foundation model)
 - **Briefing quality control** (2026-02-17): Use BRIEFING-CHECKLIST.md to verify ALL sections before sending. Never assume - always check against the list.
+- **Use existing infrastructure** (2026-02-17): Don't rebuild from scratch every day. Check second brain for existing data/code before creating new solutions.
