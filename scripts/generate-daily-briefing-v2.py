@@ -64,34 +64,67 @@ High: {high_c}°C ({high_f}°F) | Low: {low_c}°C ({low_f}°F)
 
 def get_aave_status():
     """Check Aave v3 position health"""
-    # Using cached data from second brain
-    # Updated: 2026-02-15 (from memory/jack-brain/context/john.md)
-    
-    health_factor = 2.05
-    collateral = 360000  # $360k
-    debt = 142000  # $142k
-    
-    # Calculate utilization
-    utilization = (debt / collateral * 100) if collateral > 0 else 0
-    
-    # Determine status emoji
-    if health_factor >= 2.0:
-        status = "✅ Healthy"
-    elif health_factor >= 1.5:
-        status = "⚠️ Caution"
-    else:
-        status = "🚨 Risk"
-    
-    return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    try:
+        import subprocess
+        
+        # Call the existing check-aave-health.js script
+        script_path = os.path.join(os.path.dirname(__file__), 'check-aave-health.js')
+        result = subprocess.run(['node', script_path], 
+                              capture_output=True, 
+                              text=True, 
+                              timeout=15)
+        
+        if result.returncode == 0:
+            data = json.loads(result.stdout)
+            
+            health_factor = float(data['healthFactor'])
+            collateral = float(data['totalCollateral'])
+            debt = float(data['totalDebt'])
+            
+            # Calculate utilization
+            utilization = (debt / collateral * 100) if collateral > 0 else 0
+            
+            # Determine status
+            status_label = data.get('status', 'unknown')
+            if status_label == 'healthy':
+                status = "✅ Healthy"
+            elif status_label == 'caution':
+                status = "⚠️ Caution"
+            else:
+                status = "🚨 Risk"
+            
+            # Format currency values
+            if collateral >= 1000:
+                collateral_str = f"${collateral/1000:.0f}k"
+            else:
+                collateral_str = f"${collateral:.0f}"
+                
+            if debt >= 1000:
+                debt_str = f"${debt/1000:.0f}k"
+            else:
+                debt_str = f"${debt:.0f}"
+            
+            return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💎 AAVE V3 STATUS
 
 {status}
 Health Factor: {health_factor}
-Collateral: ${collateral/1000:.0f}k
-Debt: ${debt/1000:.0f}k
+Collateral: {collateral_str}
+Debt: {debt_str}
 Utilization: {utilization:.1f}%
+"""
+        else:
+            error = result.stderr or "Unknown error"
+            return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💎 AAVE V3 STATUS
 
-*Data from: 2026-02-15 (cached)*
+❌ Error fetching data: {error}
+"""
+    except Exception as e:
+        return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💎 AAVE V3 STATUS
+
+❌ Error: {str(e)}
 """
 
 def get_x_highlights():
