@@ -30,7 +30,12 @@ _Curated memories and insights that persist across sessions._
 ## Daily Briefing Configuration
 - **X Accounts Monitored**: @mattshumer_ @RichardHeartWin @DavidDeutschOxf @karpathy @steipete
 - **Format**: Top 1-2 most interesting posts from last 24h (replaces software news section)
-- **Delivery**: 7 AM EST via AgentMail to johnda102@gmail.com
+- **Workflow (Updated 2026-02-17)**:
+  - 7:30 AM EST: Cron generates draft and sends to me for review
+  - I proofread: check weather, X highlights, email status, book insight
+  - After approval: run `scripts/send-briefing.sh` to send to johnda102@gmail.com
+  - Archive sent briefings to `memory/briefings/YYYY-MM-DD.txt`
+- **Reason**: Ensure quality control - no broken weather data or missing sections
 
 ## API Cost Optimization (2026-02-16)
 - **Main session:** Claude Sonnet 4.5 (high quality for conversations)

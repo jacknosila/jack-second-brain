@@ -133,6 +133,7 @@ def generate_briefing():
     # Build briefing sections
     weather_section = get_weather()
     email_section = check_emails()
+    x_highlights = get_x_highlights()
     book_insight = get_daily_insight()
     
     briefing = f"""DAILY BRIEFING - {day_str}, {date_str}
@@ -142,6 +143,8 @@ def generate_briefing():
 📧 EMAIL & MESSAGES
 
 {email_section}
+
+{x_highlights}
 
 {book_insight}
 
