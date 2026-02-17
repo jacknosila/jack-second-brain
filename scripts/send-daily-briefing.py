@@ -7,6 +7,9 @@ import os
 # Add the venv to the path
 sys.path.insert(0, '/Users/jacknosila/.openclaw/workspace/.venv/lib/python3.14/site-packages')
 
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning)
+
 from agentmail import AgentMail
 
 # Load credentials

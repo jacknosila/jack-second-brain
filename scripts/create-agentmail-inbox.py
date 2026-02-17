@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Create an AgentMail inbox for Jack."""
 
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning)
+
 import os
 from agentmail import AgentMail
 

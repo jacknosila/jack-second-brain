@@ -3,6 +3,9 @@
 Check both AgentMail and Gmail for unread messages
 """
 
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning)
+
 import requests
 import imaplib
 import email

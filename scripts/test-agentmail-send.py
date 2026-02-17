@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Test sending an email via AgentMail."""
 
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning)
+
 import os
 from agentmail import AgentMail
 
