@@ -34,3 +34,10 @@ Check every 3-4 heartbeats (roughly every 90-120 minutes during day)
 - Only check/report when explicitly asked
 - Calendar available for queries: "What's on my calendar today?"
 - Track in memory/heartbeat-state.json for reference only
+
+## System Health Check
+Run automated health check once per day (morning):
+- Run: `python3 scripts/health-check.py`
+- Verifies: cron jobs, email, git, scripts, memory files
+- If checks fail: alert John with details
+- Track last health check in memory/heartbeat-state.json
