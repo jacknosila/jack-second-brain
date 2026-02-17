@@ -45,10 +45,33 @@ _Curated memories and insights that persist across sessions._
 - **Documentation:** docs/cost-optimization.md
 
 ## Key Learnings
+
+### Workflow & Process
 - **Heartbeat monitoring**: Check email ~every 90-120 mins during day (cost-optimized from 60-90), rotate through different services
 - **Ad-hoc commits**: Commit meaningful updates organically, not just at midnight
+- **Briefing quality control** (2026-02-17): Use BRIEFING-CHECKLIST.md to verify ALL sections before sending. Never assume - always check against the list.
+
+### Technical
 - **AgentMail API**: Labels filter works (`?labels=unread`), use v0 endpoint path
 - **Calendar events**: Always create on johnda102@gmail.com (John's calendar), not jacknosila@gmail.com
 - **OpenAI acquisition**: Peter Steinberger (OpenClaw creator) joined OpenAI Feb 15, 2026 - project stays open source (foundation model)
-- **Briefing quality control** (2026-02-17): Use BRIEFING-CHECKLIST.md to verify ALL sections before sending. Never assume - always check against the list.
-- **Use existing infrastructure** (2026-02-17): Don't rebuild from scratch every day. Check second brain for existing data/code before creating new solutions.
+
+### Critical Principles (2026-02-17)
+1. **Use existing infrastructure first** - Before building new tools, search for what you already have:
+   - Check `scripts/` directory for existing code
+   - Search git history: `git log --all --oneline --grep="keyword"`
+   - Search second brain files for prior solutions
+   - Example: check-aave-health.js was already working, didn't need new aave-monitor.py
+
+2. **Live data > Cached data** - When data changes frequently (prices, health factors), use live queries not static snapshots:
+   - Aave health factor changes with ETH/BTC prices daily
+   - Always query fresh unless explicitly caching for performance
+   
+3. **No useless placeholders** - Either implement with real data or clearly explain what's missing and why:
+   - ❌ "[To be implemented]" - unhelpful, looks broken
+   - ✅ "⚠️ Monitoring not configured - see SETUP-DATA-SOURCES.md" - actionable
+   
+4. **Check before creating** - Prevents wasted effort and duplicate infrastructure:
+   - Search files: `grep -r "keyword" --include="*.ext"`
+   - Search git: `git log --all --grep="keyword"`
+   - Search second brain: memory_search or manual grep
