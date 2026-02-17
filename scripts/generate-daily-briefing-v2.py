@@ -64,36 +64,34 @@ High: {high_c}°C ({high_f}°F) | Low: {low_c}°C ({low_f}°F)
 
 def get_aave_status():
     """Check Aave v3 position health"""
-    # Check if we have RPC access configured
-    try:
-        creds = load_credentials()
-        rpc_url = creds.get('WEB3_RPC_URL')
-        
-        if not rpc_url:
-            return """━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    # Using cached data from second brain
+    # Updated: 2026-02-15 (from memory/jack-brain/context/john.md)
+    
+    health_factor = 2.05
+    collateral = 360000  # $360k
+    debt = 142000  # $142k
+    
+    # Calculate utilization
+    utilization = (debt / collateral * 100) if collateral > 0 else 0
+    
+    # Determine status emoji
+    if health_factor >= 2.0:
+        status = "✅ Healthy"
+    elif health_factor >= 1.5:
+        status = "⚠️ Caution"
+    else:
+        status = "🚨 Risk"
+    
+    return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💎 AAVE V3 STATUS
 
-⚠️  Monitoring not configured
-→ See SETUP-DATA-SOURCES.md for 5-min setup (free Infura/Alchemy)
+{status}
+Health Factor: {health_factor}
+Collateral: ${collateral/1000:.0f}k
+Debt: ${debt/1000:.0f}k
+Utilization: {utilization:.1f}%
 
-Address: 0xA7c87f5FF7367f0b30D376A4aCc2a2eD93624f5b
-"""
-        
-        # TODO: When RPC is configured, implement actual monitoring
-        # For now, show that setup is needed
-        return """━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💎 AAVE V3 STATUS
-
-🔧 RPC configured but monitoring code needs implementation
-→ Run: python3 scripts/aave-monitor.py
-
-Address: 0xA7c87f5FF7367f0b30D376A4aCc2a2eD93624f5b
-"""
-    except Exception as e:
-        return f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💎 AAVE V3 STATUS
-
-❌ Error: {e}
+*Data from: 2026-02-15 (cached)*
 """
 
 def get_x_highlights():
