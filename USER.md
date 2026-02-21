@@ -19,7 +19,8 @@
 **What he wants:**
 - Simple assistant tasks to start
 - Help building a second brain (knowledge management, connections between ideas)
-- Learning new things (teaching/explaining)
+- Support for continuous learning — reads widely and wants to keep expanding knowledge
+- Teaching/explaining new concepts
 
 **Style:**
 - No fuss, straight to the point
