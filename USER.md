@@ -4,11 +4,16 @@
 - **What to call them:** John
 - **Timezone:** EST (Pittsburgh, CMU)
 
-## Context
+## Background
 
-**Work:**
-- Physicist at Carnegie Mellon University
-- CMS experiment at the Large Hadron Collider
+**Education:**
+- **Undergrad:** Physics and Philosophy at University of Pittsburgh
+- **PhD:** University of Pennsylvania — Discovery of the Higgs boson with the ATLAS detector
+- **Postdoc:** University of Chicago — ATLAS detector research
+
+**Current Position:**
+- **Professor of Physics** at Carnegie Mellon University (CMU)
+- Working on the **CMS detector** at the Large Hadron Collider
 - Particle physics research
 
 **What he wants:**
