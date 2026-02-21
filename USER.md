@@ -22,6 +22,13 @@
 - Support for continuous learning — reads widely and wants to keep expanding knowledge
 - Teaching/explaining new concepts
 
+**Reading Interests** (see `~/RoamNotes/Notes/Books.org`):
+- Physics: Technical textbooks (QFT, nuclear/particle physics) + popular science
+- Philosophy: Kant, Russell, Huemer, stoicism, existentialism
+- Economics/Politics: Heavy libertarian/classical liberal (Caplan, Cowen, Austrian economics)
+- Shakespeare: Systematically working through major plays with commentaries
+- History, fiction, self-improvement, and much more
+
 **Style:**
 - No fuss, straight to the point
 - Took significant effort to get me set up — invested in making this work
