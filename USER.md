@@ -29,6 +29,9 @@
 - Shakespeare: Systematically working through major plays with commentaries
 - History, fiction, self-improvement, and much more
 
+**Other Interests:**
+- **Crypto:** Big into cryptocurrency — especially ETH, BTC, and HEX
+
 **Style:**
 - No fuss, straight to the point
 - Took significant effort to get me set up — invested in making this work
