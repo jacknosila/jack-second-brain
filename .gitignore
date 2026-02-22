@@ -12,6 +12,20 @@ secrets/
 # Local config that shouldn't be shared
 .openclaw/local/
 
+# OpenClaw workspace config (kept in ~/.openclaw/workspace instead)
+SOUL.md
+AGENTS.md
+USER.md
+IDENTITY.md
+MEMORY.md
+HEARTBEAT.md
+TOOLS.md
+BRIEFING-CHECKLIST.md
+CONTACTS.md
+HEALTH.md
+SETUP-DATA-SOURCES.md
+TODO.md
+
 # Heartbeat state (high churn, low value)
 memory/heartbeat-state.json
 
