@@ -21,7 +21,10 @@
   - `BACKEND_API_URL` or `CLAUDE_CODE_API_URL`
 
 ## Next steps
-- Start/confirm MCP backend server
+- **Backend server installed & running** (local adapter):
+  - Script: `skills/openclaw-claude-code-skill/backend/server.mjs`
+  - Port: `http://127.0.0.1:18795`
+  - MCP command: `/Users/jacknosila/.local/bin/claude mcp serve`
 - Test connection:
   - `claude-code-skill status`
   - `claude-code-skill tools`
