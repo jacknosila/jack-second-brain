@@ -10,12 +10,18 @@ _Last updated: 2026-02-28_
 - **Action:** Generate + validate + email the daily briefing
 - **Notes:** Sends only if validation passes; alerts on failure
 
-### 2) Second brain backup
+### 2) Daily journal entry (manual habit)
+- **Name:** daily-journal
+- **Schedule:** End of day (manual, but expected daily)
+- **Action:** Write a short journal entry in `second-brain/memory/YYYY-MM-DD.md` with what I did + interesting thoughts
+- **Notes:** Commit + push after writing
+
+### 3) Second brain backup
 - **Name:** second-brain-backup
 - **Schedule:** Every 6 hours
 - **Action:** Commit + push second-brain repo
 
-### 3) Second brain update pull
+### 4) Second brain update pull
 - **Name:** update-second-brain
 - **Schedule:** Every 24 hours
 - **Action:** `git pull` latest changes to second-brain repo
