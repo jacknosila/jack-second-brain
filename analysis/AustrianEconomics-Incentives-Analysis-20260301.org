@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       9B0E6C2C-7E7D-4C36-9C6C-3E7C9C9E3B7A
+:END:
+#+title: Austrian Economics & Incentives — Analysis (2026-03-01)
+
+## Austrian Economics & Incentives: Price Signals as Distributed Knowledge and the Incentive-Compatibility of Institutions
+
+The central insight of Austrian economics is not about markets as allocation mechanisms in the narrow textbook sense — it is about *epistemology*. Markets work because no single mind, committee, or model can hold the totality of human preference, resource scarcity, and opportunity cost simultaneously. Prices do. This is Hayek's knowledge problem, and it sits at the heart of why central planning fails not merely in practice, but in principle.
+
+**BitcoinStandard.org** makes the point with unusual clarity: *"Only with accurate prices expressed in a common medium of exchange is it possible for people to identify their comparative advantage and specialize in it."* This is not just an economic claim. It is a claim about cognition under uncertainty. Comparative advantage is not something an agent knows a priori — it is discovered through the feedback of prices. Distort the price signal, and you degrade the epistemic infrastructure through which individuals and organizations figure out what they are actually good at. The note goes further: *"Without a price mechanism emerging on a free market, socialism would fail at economic calculation, most crucially in the allocation of capital goods."* Capital misallocation is the quiet catastrophe — not dramatic, but compounding, invisible until it isn't.
+
+This epistemic argument pairs with a behavioral one. **PoorCharliesAlmanack.org** is relentless on this point: *"Never, ever, think about something else when you should be thinking about the power of incentives."* Munger's maxim is, in effect, a methodological prior. Before modeling any institution, ask: who benefits from what behavior? The same note credits free markets for a structural achievement that goes beyond efficiency — *"The extreme success of free-market capitalism owes much to its prevention of many bad effects from incentive-caused bias."* The market does not produce saints; it channels self-interest toward outcomes that are at least approximately aligned with social value. The institution is incentive-compatible in a way that command structures typically are not.
+
+The complication is scale and complexity. **Libertarianism-more-effective-in-complicated-societies.org** observes: *"The more complicated the society, the less central planning will be effective at optimizing (and exploring) potential solutions."* The key word is *exploring*. Central planners can optimize against a known objective, poorly; they cannot explore an unknown solution space at all. Markets, by contrast, run a massively parallel search across heterogeneous agents with heterogeneous local knowledge. The exploration is not designed — it is an emergent property of the incentive structure. **Libertarianism-A-primer.org** adds a necessary sobering note via Public Choice theory: *"Government doesn't just act. Some people in government act and they are subject to the same incentives as individuals in a market."* The planner is not a benevolent social welfare maximizer. They are an agent with a budget, a career, and political constraints. Assuming otherwise is a failure mode.
+
+The practical implication for decision-making under uncertainty is this: when you cannot centralize knowledge, distribute authority to whoever holds the relevant local information, and use incentive-compatible rules to align their decisions with broader goals. This is not a counsel of chaos — it is an engineering principle.
+
+### Why this matters for scientific collaboration and large experiments like CMS
+CMS is a collaboration of 6,000+ physicists across 240 institutions, coordinating hardware, software, and physics analysis simultaneously. No single person or committee understands it all. In this sense, CMS faces the same knowledge problem that Hayek described for economies. The experiment succeeds not because of perfect central planning but because of layered incentive structures — authorship rules, review committees, career incentives for publication — that partially align individual effort with collective output. Where those incentive structures misfire (publication pressure over calibration quality, institutional credit over cross-group cooperation), the experiment pays exactly the costs Austrian theory would predict: misallocated effort, explored paths that shouldn't have been, and underexplored ones that should. Designing better scientific institutions means taking the incentive architecture as seriously as the detector architecture.
+
+---
+
+**Related notes:**
+- BitcoinStandard.org
+- PoorCharliesAlmanack.org
+- Libertarianism-more-effective-in-complicated-societies.org
