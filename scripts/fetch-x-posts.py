@@ -9,6 +9,10 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import json
 import time
+from pathlib import Path
+
+# Cache path
+CACHE_PATH = Path.home() / ".openclaw/workspace/memory/briefings/x-cache.json"
 
 # Accounts to monitor
 MONITORED_ACCOUNTS = [
@@ -18,6 +22,32 @@ MONITORED_ACCOUNTS = [
     "karpathy",         # AI/ML
     "steipete"          # Tech/iOS
 ]
+
+def fetch_user_tweets_jina(username, max_tweets=5):
+    """Fallback: fetch via r.jina.ai proxy of X (text-only)"""
+    try:
+        url = f"https://r.jina.ai/http://x.com/{username}"
+        response = requests.get(url, timeout=10)
+        if response.status_code != 200:
+            return []
+        text = response.text
+        lines = [l.strip() for l in text.splitlines() if l.strip()]
+        # crude extraction: take first few lines after username occurrences
+        tweets = []
+        for line in lines:
+            if line.startswith("@") or line.startswith(username):
+                continue
+            if len(line) > 20 and len(tweets) < max_tweets:
+                tweets.append({
+                    'username': username,
+                    'text': line,
+                    'timestamp': '',
+                    'source': 'jina'
+                })
+        return tweets[:max_tweets]
+    except Exception:
+        return []
+
 
 def fetch_user_tweets_nitter(username, max_tweets=5):
     """
@@ -70,7 +100,12 @@ def fetch_user_tweets_nitter(username, max_tweets=5):
             print(f"Failed to fetch from {instance}: {e}")
             continue
     
-    # If all instances fail, return empty
+    # If all instances fail, try jina.ai text proxy
+    jina = fetch_user_tweets_jina(username, max_tweets=max_tweets)
+    if jina:
+        return jina
+
+    # If all fail, return empty
     return []
 
 def rank_tweet_interest(tweet):
@@ -120,16 +155,38 @@ def fetch_all_monitored_tweets():
     
     # Sort by interest score
     all_tweets.sort(key=lambda x: x['interest_score'], reverse=True)
-    
+
     return all_tweets
 
-def format_tweets_for_briefing(tweets, max_tweets=2):
+def load_cache():
+    try:
+        if CACHE_PATH.exists():
+            return json.loads(CACHE_PATH.read_text())
+    except Exception:
+        return None
+    return None
+
+
+def save_cache(tweets):
+    try:
+        CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        CACHE_PATH.write_text(json.dumps({
+            "timestamp": datetime.now().isoformat(),
+            "tweets": tweets
+        }, indent=2))
+    except Exception:
+        pass
+
+
+def format_tweets_for_briefing(tweets, max_tweets=2, cached=False, cache_ts=None):
     """Format top tweets for the daily briefing"""
     
     if not tweets:
         return "  [Unable to fetch posts at this time]\n"
     
     output = ""
+    if cached and cache_ts:
+        output += f"[Using cached posts from {cache_ts}]\n"
     for tweet in tweets[:max_tweets]:
         # Truncate long tweets
         text = tweet['text']
@@ -145,7 +202,18 @@ def format_tweets_for_briefing(tweets, max_tweets=2):
 if __name__ == "__main__":
     print("Fetching recent posts from monitored X accounts...\n")
     tweets = fetch_all_monitored_tweets()
-    
+
+    cached = False
+    cache_ts = None
+    if tweets:
+        save_cache(tweets)
+    else:
+        cache = load_cache()
+        if cache and cache.get("tweets"):
+            tweets = cache.get("tweets")
+            cached = True
+            cache_ts = cache.get("timestamp")
+
     print(f"\nFound {len(tweets)} tweets")
     print("\nTop 2 most interesting:\n")
-    print(format_tweets_for_briefing(tweets, max_tweets=2))
+    print(format_tweets_for_briefing(tweets, max_tweets=2, cached=cached, cache_ts=cache_ts))
