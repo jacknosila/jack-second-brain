@@ -1,15 +1,16 @@
-# Handoff — 2026-03-23
+# Handoff — 2026-03-25
 
 ## Last Session
-Set up PreCompact and PostCompact hooks in `~/.claude/settings.json`. PreCompact spawns a claude subprocess with the /done skill prompt piped via stdin, reading the session transcript JSONL to write handoff notes automatically. PostCompact injects handoff.md + open follow-ups back into context.
+Moved skills to second brain, built gmail-watcher.py, got Hue lights working (bridge at 192.168.1.159), and started Oura ring API setup. Gmail autonomous action architecture left open for John to decide.
 
 ## Resume Here
-Verify the PreCompact hook fires correctly during a real autocompact event — check that `handoff.md` and `session-log.md` are written properly.
+John needs to create an Oura personal access token via the developer portal. Then test the API read.
 
 ## Open Items
-- Confirm PreCompact hook triggers reliably in production compaction
-- Confirm PostCompact injects handoff content correctly after compaction
+- Gmail watcher architecture: decide between spawn `claude -p` per email vs lighter alternatives (token cost concern raised)
+- Oura personal access token — still needs to be created at cloud.ouraring.com developer portal
+- Verify PreCompact hook fires correctly in production
 
 ## Context
-- Projects touched: claude-code-hooks, jack-second-brain
-- Key files: `~/jack-second-brain/scripts/auto-done.sh`, `~/.claude/settings.json`
+- Projects touched: home-automation, jack-second-brain, claude-code-hooks
+- Key files: `~/jack-second-brain/gmail-watcher.py`, `~/jack-second-brain/skills/`, Hue bridge at 192.168.1.159
